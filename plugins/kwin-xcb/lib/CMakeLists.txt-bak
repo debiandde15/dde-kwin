@@ -1,6 +1,5 @@
 set(TARGET_NAME "kwin-xcb")
 
-find_package(X11 REQUIRED) # 修复出现报错 /usr/bin/ld: 找不到 -lX11::X11: 没有那个文件或目录 的问题
 find_package(Qt5Core REQUIRED)
 find_package(Qt5X11Extras REQUIRED)
 find_package(KF5Config REQUIRED)

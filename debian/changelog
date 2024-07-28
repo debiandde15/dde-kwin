@@ -1,5 +1,5 @@
-dde-kwin (0.0.1-1) unstable; urgency=medium
+dde-kwin (0.1.0-1) unstable; urgency=low
 
-  * Initial release
+  * ['Autobuild release-candidate: 91855b770787ddef3d11ccbe3d9f68932a6a5b83']
 
- -- Deepin Packages Builder <packages@deepin.com>  Mon, 11 Mar 2019 09:30:02 +0800
+ -- shuttle <shuttle@deepin.com>  Tue, 09 Jul 2019 15:11:29 +0000

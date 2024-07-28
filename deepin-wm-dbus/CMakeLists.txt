@@ -1,13 +1,20 @@
 set(TARGET_PATH "${CMAKE_INSTALL_PREFIX}/bin")
 set(TARGET_NAME "deepin-wm-dbus")
 
+find_package(Dtk COMPONENTS Core Gui Widget REQUIRED)
+include_directories(${PROJECT_NAME} PRIVATE ${DtkWidget_INCLUDE_DIRS})
+include_directories(${PROJECT_NAME} PRIVATE ${DtkCore_INCLUDE_DIRS})
+include_directories(${PROJECT_NAME} PRIVATE ${DtkGui_INCLUDE_DIRS})
+
 find_package(Qt5Core REQUIRED)
 find_package(Qt5DBus REQUIRED)
+find_package(DtkCMake REQUIRED)
 find_package(KF5Config REQUIRED)
 find_package(KF5WindowSystem REQUIRED)
 find_package(KF5GlobalAccel REQUIRED)
 find_package(DtkCore REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(X11 REQUIRED) # 修复出现报错 /usr/bin/ld: 找不到 -lX11::X11: 没有那个文件或目录 的问题
 
 option(DISABLE_DEEPIN_WM "disable compatibility with deepin-wm" OFF)
 

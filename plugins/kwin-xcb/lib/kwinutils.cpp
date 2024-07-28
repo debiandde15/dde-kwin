@@ -25,7 +25,7 @@
 #include <QDebug>
 #include <QX11Info>
 #include <QMargins>
-
+#include <span>
 // 为了访问 KWinEffects 的保护成员变量
 #define protected public
 #include <kwineffects.h>

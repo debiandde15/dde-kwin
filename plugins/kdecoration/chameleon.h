@@ -30,6 +30,7 @@
 #include <QDir>
 #include <QSettings>
 #include <QScreen>
+#include <QPainterPath>
 
 class Settings;
 class Chameleon : public KDecoration2::Decoration
