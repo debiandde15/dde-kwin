@@ -1,4 +1,9 @@
 project(DDEKWin)
+
+set(DUSE_KWIN_NO_SCALE OFF)
+set(DUSE_PLUGINS OFF)
+set(DUSE_WINDOW_TOOL OFF)
+
 set(CMAKE_CXX_STANDARD 20)
 set(PROJECT_NAME "dde-kwin")
 
@@ -14,6 +19,11 @@ add_definitions(
     -DPROJECT_NAME=\\"${PROJECT_NAME}\\"
     -DPROJECT_VERSION=\\"${PROJECT_VERSION}\\"
 )
+
+option(USE_PLUGINS "use dde-kwin plugins" ON)
+option(USE_SCRIPTS "use scripts" ON)
+option(USE_DEEPIN_WM_DBUS "use deepin-wm dbus service" ON)
+option(USE_TABBOX "use deepin style tabbox" ON)
 
 find_package(Qt5Core)
 get_target_property(QT_QMAKE_EXECUTABLE ${Qt5Core_QMAKE_EXECUTABLE} IMPORTED_LOCATION)
