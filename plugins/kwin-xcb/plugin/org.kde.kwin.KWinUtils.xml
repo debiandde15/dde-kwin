@@ -1,0 +1,25 @@
+<interface name="org.kde.KWin">
+    <method name="WalkThroughWindows">
+    </method>
+    <method name="WalkBackThroughWindows">
+    </method>
+    <method name="WindowMove">
+    </method>
+    <method name="WindowMaximize">
+    </method>
+    <method name="QuickTileWindow">
+        <arg type="u" name="side" direction="in"/>
+    </method>
+    <method name="ShowWorkspacesView">
+    </method>
+    <method name="ShowWindowsView">
+    </method>
+    <method name="ShowAllWindowsView">
+    </method>
+    <method name="ResumeCompositor">
+        <arg type="i" name="type" direction="in"/>
+    </method>
+    <method name="SuspendCompositor">
+        <arg type="i" name="type" direction="in"/>
+    </method>
+</interface>
