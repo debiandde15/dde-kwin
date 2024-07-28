@@ -1,0 +1,39 @@
+Description: <Highly-optimized-title-bar>
+ 
+dde-kwin (5.5.25.1-2) unstable; urgency=medium
+ .
+   * fix herght 40 -> 24.
+
+Author: LiChengGang <lichenggang@uniontech.com>
+
+---
+
+--- dde-kwin-5.5.25.1.orig/plugins/kdecoration/chameleontheme.cpp
++++ dde-kwin-5.5.25.1/plugins/kdecoration/chameleontheme.cpp
+@@ -142,7 +142,7 @@ static void writeDecorationConfig(const
+ 
+ static void writeTitlebarConfig(const QSettings &setting, ChameleonTheme::TitleBarConfig &config, const ChameleonTheme::TitleBarConfig *base = nullptr)
+ {
+-    config.height = setting.value("height", base ? base->height : 40.0).toDouble();
++    config.height = setting.value("height", base ? base->height : 24.0).toDouble();
+     config.area = static_cast<Qt::Edge>(setting.value("area", base ? base->area : Qt::TopEdge).toInt());
+ 
+     // colors
+--- dde-kwin-5.5.25.1.orig/plugins/kdecoration/deepin/dark/titlebar.ini
++++ dde-kwin-5.5.25.1/plugins/kdecoration/deepin/dark/titlebar.ini
+@@ -1,5 +1,5 @@
+ [Active]
+-height=40
++height=24
+ area=1
+ 
+ textColor=#8c8c8c
+--- dde-kwin-5.5.25.1.orig/plugins/kdecoration/deepin/light/titlebar.ini
++++ dde-kwin-5.5.25.1/plugins/kdecoration/deepin/light/titlebar.ini
+@@ -1,5 +1,5 @@
+ [Active]
+-height=40
++height=24
+ area=1
+ 
+ textColor=#303030
