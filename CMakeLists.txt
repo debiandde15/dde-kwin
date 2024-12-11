@@ -41,19 +41,12 @@ find_package(Qt5Core)
 get_target_property(QT_QMAKE_EXECUTABLE ${Qt5Core_QMAKE_EXECUTABLE} IMPORTED_LOCATION)
 
 macro(query_qmake args output)
-    execute_process(
-        COMMAND ${QT_QMAKE_EXECUTABLE} -query ${args}
-        OUTPUT_VARIABLE ${output}
-        ERROR_VARIABLE error_output
-        RESULT_VARIABLE exitCode
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
+    exec_program(${QT_QMAKE_EXECUTABLE} ARGS -query ${args} OUTPUT_VARIABLE ${output} RETURN_VALUE exitCode)
 
     if(NOT ${exitCode} EQUAL 0)
-        message(FATAL_ERROR "exec ${QT_QMAKE_EXECUTABLE} failed, with args: ${args}, error message: ${error_output}")
+        message(FATAL_ERROR "exec ${QT_QMAKE_EXECUTABLE} failed, with args: ${args}, error message: ${output}")
     endif()
 endmacro()
-
 
 query_qmake("QT_INSTALL_PLUGINS" QT_INSTALL_PLUGINS)
 
